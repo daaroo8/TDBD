@@ -4,10 +4,9 @@
 Consulta básica con `JOIN`. Nota: Esta consulta puede devolver duplicados si un empleado trabaja en varios proyectos.
 
 ```sql
-SELECT empleados.nss 
-FROM empleados, trabajar
-WHERE empleados.nss = trabajar.nss
-  AND trabajar.horas >= 10;
+SELECT nss
+FROM trabajar
+WHERE trabajar.horas >= 10;
 ```
 
 ### 2. Número de la Seguridad Social de los empleados que trabajan 10 horas o más en algún proyecto (sin repeticiones)
@@ -15,10 +14,9 @@ Se elimina la duplicidad. Se presentan dos formas de hacerlo:
 
 **Opción A: Usando DISTINCT**
 ```sql
-SELECT DISTINCT empleados.nss 
-FROM empleados, trabajar
-WHERE empleados.nss = trabajar.nss
-  AND trabajar.horas >= 10;
+SELECT DISTINCT nss 
+FROM trabajar
+WHERE trabajar.horas >= 10;
 ```
 
 **Opción B: Usando IN (Más eficiente/elegante)**
@@ -48,7 +46,7 @@ WHERE direccion LIKE '%Valladolid%';
 Cuenta cuántos departamentos distintos existen en esas localidades.
 
 ```sql
-SELECT COUNT(DISTINCT depno) 
+SELECT depno
 FROM localizaciones
 WHERE localidad = 'Valladolid' OR localidad = 'Palencia';
 ```

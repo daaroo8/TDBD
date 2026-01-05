@@ -13,7 +13,7 @@ SELECT nss FROM familiares WHERE relacion = 'hija';
 Uso de funciones de grupo (`SUM`, `MAX`, `MIN`) filtrando por el departamento obtenido en la subconsulta.
 
 ```sql
-SELECT SUM(salario), MAX(salario), MIN(salario) 
+SELECT SUM(salario), MAX(salario), MIN(salario)
 FROM empleados
 WHERE depno = (SELECT depno FROM departamentos WHERE nombre = 'Contabilidad');
 ```
@@ -60,4 +60,5 @@ Se verifica que el NSS esté en la lista de jefes (`supernss`) y que tenga regis
 SELECT nombre, apellidos 
 FROM empleados
 WHERE nss IN (SELECT supernss FROM empleados)
-  AND (SELECT COUNT(*) FROM familiares WHERE familiares.nss = empleados.nss
+  AND EXISTS (SELECT * FROM familiares WHERE familiares.nss = empleados.nss);
+```

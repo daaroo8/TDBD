@@ -170,6 +170,11 @@ WHERE EXISTS (SELECT * FROM familiares WHERE nss = empleados.nss AND relacion = 
 
 Estos comandos son específicos de la herramienta cliente, no del lenguaje SQL estándar.
 
+**Definir editor de texto**
+```sql
+define_editor nombre_editor  -- Ej. vi, notepad
+```
+
 **Crear o editar un fichero de comandos**
 Abre el editor definido (ej. vi o notepad).
 ```sql
