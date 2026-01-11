@@ -172,7 +172,7 @@ Estos comandos son específicos de la herramienta cliente, no del lenguaje SQL e
 
 **Definir editor de texto**
 ```sql
-define_editor nombre_editor  -- Ej. vi, notepad
+define_editor=nombre_editor  -- Ej. vi, notepad
 ```
 
 **Crear o editar un fichero de comandos**
