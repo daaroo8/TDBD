@@ -16,11 +16,11 @@
 
 **(Forma canónica)**
 - [ ] **Derecha simple**, rompe cualquier dependencia funcional con derecha compuesta.
-    * `Ej: A -> B, C` se convierte en `A -> B` y `A -> C`
+    * `Ej: A → B, C` se convierte en `A → B` y `A → C`
 
 **(Atributos extraños)**
 - [ ] **Izquierda limpia**, elimina atributos a la izquierda que sobran.
-    * `Ej: A, B -> C`. Calcula el cierre de A (`A+`).
+    * `Ej: A, B → C`. Calcula el cierre de A (`A+`).
     * **Si** (¿Se puede llegar a C sin B? ¿Y viceversa?):
         * Elimina el atributo sobrante.
     * **Si no**:
@@ -28,13 +28,13 @@
 
 **(Reglas que sobran)**
 - [ ] **Elimina reglas redundantes** que se deduzcan por transitividad.
-    * `Ej: Si tenemos A -> B; B -> C; A -> C` entonces `A -> C` es redundante y se elimina.
+    * `Ej: Si tenemos A → B; B → C; A → C` entonces `A → C` es redundante y se elimina.
 
 ## Paso 2 - Crear las Tablas (Síntesis)
 
 - [ ] **Junta todas las reglas** que tengan el mismo lado izquierdo.
     * Cada conjunto de reglas con el mismo lado izquierdo formará una tabla.
-    * *Extra:* Si tienes una equivalencia `A <-> B`, juntalas en la misma tabla.
+    * *Extra:* Si tienes una equivalencia `A <→ B`, juntalas en la misma tabla.
 - [ ] **Definir la tabla**:
     * Los atributos de la tabla son: `{Determinante + Todos los de la derecha}`
     * La clave primaria es el **determinante** (lado izquierdo).
@@ -46,3 +46,21 @@
         * **FIN**, la base de datos está en 3FN.
     * **Si no**:
         * Crea una tabla nueva extra que solo contenga los atributos de la clave candidata.
+
+# Justificar en que forma normal se encuentra una tabla
+- [ ] **Tercera Forma Normal (3FN)**:
+    * Una relacion R con un conjunto D.F. está en 3FN si siempre que una D.F. `X → Y` cumple que:
+        * X es una superclave (super conjunto de clave candidata), o
+        * Y es un atributo básico (forma parte de alguna clave candidata).
+* [ ] **Forma normal de Boyce-Codd (FNBC)**:
+    * Una relación R con un conjunto D.F. está en FNBC si siempre que una D.F. `X → Y` cumple que:
+        * X es una superclave (super conjunto de clave candidata).
+  
+> [!TIP] 
+> Si una tabla está en FNBC, entonces también está en 3FN.
+> 
+> `FNBC ⟹ 3FN`
+>
+> Si una tabla NO está en 3FN, entonces tampoco está en FNBC.
+>
+> `¬3FN ⟹ ¬FNBC`
