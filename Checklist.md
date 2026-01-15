@@ -104,3 +104,8 @@ Básicamente te pregunta: "¿Qué columnas son flechas que apuntan a otra tabla?
 - [ ] **Identificar claves foráneas**:
     * Revisa las relaciones entre tablas.
     * Identifica las columnas que hacen referencia a claves primarias en otras tablas.
+
+> [!TIP]
+> Siempre que pida "Restricciones de Integridad de Entidad" → piensa en **Claves Primarias**.
+> 
+> Siempre que pida "Restricciones de Integridad Referencial" → piensa en **Claves Foráneas**.
