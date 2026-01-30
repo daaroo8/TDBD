@@ -86,3 +86,22 @@ El álgebra relacional es un conjunto de operaciones que se aplican a las relaci
 - Utilizada para consultas que involucran "para todos".
 - Sintaxis: R1 / R2 donde `R1` es la relación dividida y `R2` es la relación divisor.
 - Ejemplo: Si R1 tiene atributos (A, B) y R2 tiene atributo (B), entonces R1 / R2 devuelve los valores de A para los cuales existen todas las combinaciones de B en R2.
+
+> [!TIP]
+> Siempre que en el enunciado diga:
+>
+> **Todas las x** | **Cada x** | **Todo el x** →
+> `DIVISIÓN (/)`<br>
+> ¿Tiene 1? Sí, ¿Y el 2? Sí...
+>
+> **Ningún** | **Nadie** | **Nunca** →
+> `RESTA (-)` <br>
+> Total - (los que sí)
+>
+> **Solo hicieron x** | **Todos sus x son y** →
+> `RESTA(-)`<br>
+> Total - (los que hicieron algo distinto a x)
+>
+> **Al menos dos** | **Más de uno** →
+> `AUTO-JOIN` <br>
+> A ⨝<sub>A.x = B.x</sub> B
