@@ -32,35 +32,49 @@
 
 ## Paso 1 - El Recubrimiento Minimal
 
-**(Forma canónica)**
+**a) Forma canónica**
 - [ ] **Derecha simple**, rompe cualquier dependencia funcional con derecha compuesta.
     * `Ej: A → B, C` se convierte en `A → B` y `A → C`
 
-**(Atributos extraños)**
+**b) Atributos extraños**
 - [ ] **Izquierda limpia**, elimina atributos a la izquierda que sobran.
-    * `Ej: A, B → C`. Calcula el cierre de A (`A+`).
-    * **Si** (¿Se puede llegar a C sin B? ¿Y viceversa?):
+    * `Ej: F = {A, B → C}`. 
+    * Escribir: ¿ $C \in \{B\}^+_F$ ? (para cada tributo que comprobemos)
+    * Calcula $\{B\}^+_F$.
+    * **Si** (¿Existe C en el cierre transitivo de B?):
         * Elimina el atributo sobrante.
+        * Es extraño
     * **Si no**:
         * Mantén ambos atributos.
+        * No es extraño
+    * Comprobar para todos los que sean extraños
+    * Para los que no lo son, que se ven a simple vista, con comprobarlo para un par sobra.
 
-**(Reglas que sobran)**
+**c) Reglas que sobran**
 - [ ] **Elimina reglas redundantes** que se deduzcan por transitividad.
-    * `Ej: Si tenemos A → B; B → C; A → C` entonces `A → C` es redundante y se elimina.
+    * Escribir: ¿i  es redundante?
+    * Escribir: G = F - i (siendo i (X → Y) la regla que estamos comprobando si es redundante)
+    * Calcular con las reglas que nos quedan el cierre transitivo de X sobre G 
+      * `Ej: Si tenemos F = {A → B; B → C; A → C}` 
+      * `¿3 es redundante?`
+      * `G = F - A → C`
+      * $\{A\}^+_G$ `= {A, B, C}`
+      * Por tanto 3 es redundante
 
 ## Paso 2 - Crear las Tablas (Síntesis)
 
-- [ ] **Junta todas las reglas** que tengan el mismo lado izquierdo.
-    * Cada conjunto de reglas con el mismo lado izquierdo formará una tabla.
-    * *Extra:* Si tienes una equivalencia `A <→ B`, juntalas en la misma tabla.
+- [ ] **Crear una tabla por d.f.**
+    * `Ej: Si tenemos F = {A → B; B → C; A,C → D}`
+    * `Clave candidata: A`
+    * `Tendremos 3 tablas`
 - [ ] **Definir la tabla**:
-    * Los atributos de la tabla son: `{Determinante + Todos los de la derecha}`
+    * Los atributos de la tabla son: `{Determinante + Determinado}`
     * La clave primaria es el **determinante** (lado izquierdo).
 
 ## Paso 3 - Asegurar la Clave Global
 
 - [ ] **Revisa las claves candidatas** que calculaste al principio:
-    * **Si** (¿Hay alguna tabla que contenga TODOS los atribuytos de esa clave jutnos?):
+    * **Si** (¿Hay alguna tabla que contenga TODOS los atributos de esa clave juntos?):
         * **FIN**, la base de datos está en 3FN.
     * **Si no**:
         * Crea una tabla nueva extra que solo contenga los atributos de la clave candidata.
