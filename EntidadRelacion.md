@@ -65,7 +65,7 @@
   * Es una generalización de varias y solo tiene nombre.
 
 ### Entidades Débiles
-- Para denotar que una entidad es débil de otra, para la fila del id se utiliza:<br><br>
+- Para denotar que una entidad es débil de otra, para la fila del id se utiliza y una línea doble en el cuadrado:<br><br>
   <img src="entidad_debil.png" width=400px>
 
 ### Relaciones
@@ -74,12 +74,11 @@
   * Puede tener dos en caso de que presente atributos de relación.
 - `Ejemplo:` <br><br>
   <img src="relacion.png" width=300px>
+- Para las relaciones en las que está involucrada una entidad débil, se denota de igual manera con una línea doble (*ver entidad débil*).
 
 - **Restricciones**:
   * Si para una relación ha de darse que un `atributo` valga `x`. 
-  * Se denota con una línea saliente de la línea que conecta la entidad con la relación hacia un cuadrado en el que está la restricción.
-  * `Ejemplo:`<br><br>
-    <img src="restriccion.png" width=400px>
+  * A Mercedes le gusta que directamente se lo expresemos en texto.
 
 ### Cardinalidades
 - Se ponen encima de las líneas que unen las entidades con la relación.
@@ -94,7 +93,7 @@
 - Las *subentidad* conectan desde el lado opuesto del pico al que se conectó la *superentidad*.
 - Explicar cómo es la notación.
 - Para denotar que la *superentidad* es abstracta se utiliza una doble raya (o una más gruesa) hacia el triángulo.
-- Para denotar que la *subentidad* tiene que ser una u otra se denota con un arco que engloba las líneas que salen del triángulo hacia las subentidad.
+- Para denotar que la *subentidad* tiene que ser una u otra se denota con una d dentro del triángulo de generalización/especialización.
 - `Ejemplo:`<br><br>
   <img src="herencia.png" width=400px>
 
